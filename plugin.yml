@@ -1,0 +1,14 @@
+name: InvSync
+author: CryT4x
+version: 0.11
+api-version: 1.13
+main: de.cryt4x.invsync.main.Main
+website: https://www.cryt4x.de
+commands:
+   invsyncinfo:
+      aliases: [isinfo, ctpl2]
+      description: Shows info about the plugin!
+   invsave:
+      description: Saves your current inventory!
+   invload:
+      description: Loads your current inventory!
