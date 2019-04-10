@@ -22,9 +22,7 @@ public class InvLoadCommand implements CommandExecutor
 				if (args.length == 0)
 				{
 					Inventory playerInv = player.getInventory();
-					
 					FileConfiguration config = Main.getPlugin().getConfig();
-					
 					for (int i=0;i<41;i++)
 					{
 						playerInv.setItem(i, config.getItemStack(player.getName()+".inv."+i));
