@@ -1,22 +1,16 @@
 package de.cryt4x.invsync.commands;
 
-//import org.bukkit.Bukkit;
-//import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
-//import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
-//import org.bukkit.inventory.ItemStack;
-//import org.bukkit.inventory.meta.ItemMeta;
 
 import de.cryt4x.invsync.main.Main;
 
 public class InvSaveCommand implements CommandExecutor
 {
-
 	@Override
 	public boolean onCommand (CommandSender sender, Command command, String label, String[] args) {
 		
@@ -28,9 +22,7 @@ public class InvSaveCommand implements CommandExecutor
 				if (args.length == 0)
 				{
 					Inventory playerInv = player.getInventory();
-					
 					FileConfiguration config = Main.getPlugin().getConfig();
-					
 					for (int i=0;i<41;i++)
 					{
 						config.set(player.getName()+".inv."+i, playerInv.getItem(i));
@@ -39,32 +31,24 @@ public class InvSaveCommand implements CommandExecutor
 					{
 						playerInv.setItem(i, config.getItemStack(player.getName()+".inv."+i));
 					}
-					
 					Main.getPlugin().saveConfig();
-					
-					
-					
-					player.sendMessage("§6Inventory saved!");
-					player.sendMessage("§6Config saved!");
+					player.sendMessage("Â§6Inventory saved!");
+					player.sendMessage("Â§6Config saved!");
 				}
 				else
 				{
-					player.sendMessage("§cPls use §6/invsave$c!");
+					player.sendMessage("Â§cPls use Â§6/invsave$c!");
 				}
 			}
 			else
 			{
-				player.sendMessage("§cYou don't have permission to do that!");
+				player.sendMessage("Â§cYou don't have permission to do that!");
 			}
 		}
 		else
 		{
 			sender.sendMessage("This command can only be executed by a player!");
 		}
-		
 		return false;
 	}
-
-	
-
 }
