@@ -9,14 +9,11 @@ import org.bukkit.inventory.Inventory;
 
 import de.cryt4x.invsync.main.Main;
 
-
-
 public class InvLoadCommand implements CommandExecutor
 {
-
 	@Override
-	public boolean onCommand (CommandSender sender, Command command, String label, String[] args) {
-		
+	public boolean onCommand (CommandSender sender, Command command, String label, String[] args)
+	{
 		if (sender instanceof Player)
 		{
 			Player player = (Player) sender;
@@ -33,26 +30,22 @@ public class InvLoadCommand implements CommandExecutor
 						playerInv.setItem(i, config.getItemStack(player.getName()+".inv."+i));
 					}
 					
-					player.sendMessage("§6Inventory loaded!");
+					player.sendMessage("Â§6Inventory loaded!");
 				}
 				else
 				{
-					player.sendMessage("§cPls use §6/myinv$c!");
+					player.sendMessage("Â§cPls use Â§6/myinv$c!");
 				}
 			}
 			else
 			{
-				player.sendMessage("§cYou don't have permission to do that!");
+				player.sendMessage("Â§cYou don't have permission to do that!");
 			}
 		}
 		else
 		{
 			sender.sendMessage("This command can only be executed by a player!");
 		}
-		
 		return false;
 	}
-
-	
-
 }
