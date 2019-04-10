@@ -11,7 +11,6 @@ import de.cryt4x.invsync.main.Main;
 
 public class InvSaveCommand implements CommandExecutor
 {
-
 	@Override
 	public boolean onCommand (CommandSender sender, Command command, String label, String[] args) {
 		
@@ -23,9 +22,7 @@ public class InvSaveCommand implements CommandExecutor
 				if (args.length == 0)
 				{
 					Inventory playerInv = player.getInventory();
-					
 					FileConfiguration config = Main.getPlugin().getConfig();
-					
 					for (int i=0;i<41;i++)
 					{
 						config.set(player.getName()+".inv."+i, playerInv.getItem(i));
@@ -34,9 +31,7 @@ public class InvSaveCommand implements CommandExecutor
 					{
 						playerInv.setItem(i, config.getItemStack(player.getName()+".inv."+i));
 					}
-					
 					Main.getPlugin().saveConfig();
-					
 					player.sendMessage("§6Inventory saved!");
 					player.sendMessage("§6Config saved!");
 				}
