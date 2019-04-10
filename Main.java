@@ -1,7 +1,5 @@
 package de.cryt4x.invsync.main;
 
-//import org.bukkit.Bukkit;						//Nötig für listener
-//import org.bukkit.plugin.PluginManager;		//Nötig für listener
 import org.bukkit.plugin.java.JavaPlugin;
 
 import de.cryt4x.invsync.commands.InvLoadCommand;
@@ -10,9 +8,7 @@ import de.cryt4x.invsync.commands.InvSyncInfoCommand;
 
 public class Main extends JavaPlugin
 {
-	
 	private static Main plugin;
-	
 	public void onEnable ()
 	{
 		plugin = this;
@@ -31,9 +27,7 @@ public class Main extends JavaPlugin
 		//PluginManager pluginManager = Bukkit.getPluginManager();
 		//pluginManager.registerEvents(new <ListenerName()>, this);
 	}
-	
 	public static Main getPlugin() {
 		return plugin;
 	}
-	
 }
